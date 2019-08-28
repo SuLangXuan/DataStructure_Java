@@ -1,6 +1,10 @@
 # DataStructure_Java
 Java版的数据结构    使用Java语言实现常用的数据结构
 
+完整博客地址：
+
+<https://blog.csdn.net/qq_31151125/article/category/9303826>
+
 # 数据结构
 
 * 线性结构
@@ -40,4 +44,9 @@ Java版的数据结构    使用Java语言实现常用的数据结构
 
 ![](https://img-blog.csdnimg.cn/20190828110626629.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxMTUxMTI1,size_16,color_FFFFFF,t_70)
 
- 
+
+
+稀疏数组详细介绍以及列子应用：
+
+https://blog.csdn.net/qq_31151125/article/details/100116338 https://blog.csdn.net/qq_31151125/article/details/100116338 
+
