@@ -38,6 +38,6 @@ Java版的数据结构    使用Java语言实现常用的数据结构
 
 2. 把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模
 
-![](.\image\稀疏数组图示.JPG)
+![](https://img-blog.csdnimg.cn/20190828110626629.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxMTUxMTI1,size_16,color_FFFFFF,t_70)
 
  
