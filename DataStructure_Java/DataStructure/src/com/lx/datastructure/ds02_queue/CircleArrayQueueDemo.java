@@ -75,6 +75,7 @@ class CircleArray {
     public CircleArray(int arrMaxSize) {
         maxSize = arrMaxSize;
         arr = new int[maxSize];
+        int i = 0;
     }
 
     // 判断队列是否满
