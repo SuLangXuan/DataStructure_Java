@@ -94,6 +94,27 @@ public class SingleLinkedList {
     }
 
     /**
+     * 查询
+     */
+    public void check(SNode node){
+        SNode temp = head;
+        boolean flag = false;// TODO: 2019/8/31 标识当前节点在链表中是否存在
+        while (true){
+            if (temp.getNext() == null) break;// TODO: 2019/8/31 已经是链表的最后了，说明链表中没有对应的节点
+            if (node.getNo() == temp.getNo()){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+            System.out.println(temp);
+        }else {
+            System.out.println("链表中没有对应的节点");
+        }
+    }
+
+    /**
      * 遍历打印链表中的全部节点
      */
     public void show(){
