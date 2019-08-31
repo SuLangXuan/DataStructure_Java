@@ -72,6 +72,28 @@ public class SingleLinkedList {
     }
 
     /**
+     * 修改链表中的节点
+     */
+    public void update(SNode node){
+        SNode temp = head;
+        boolean flag = false;// TODO: 2019/8/31 标识当前节点在链表中是否存在
+        while (true){
+            if (temp.getNext() == null) break;// TODO: 2019/8/31 已经是链表的最后了，说明链表中没有对应的节点
+            if (node.getNo() == temp.getNext().getNo()){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+            node.setNext(temp.getNext().getNext());
+            temp.setNext(node);
+        }else {
+            System.out.println("链表中没有对应的节点");
+        }
+    }
+
+    /**
      * 遍历打印链表中的全部节点
      */
     public void show(){

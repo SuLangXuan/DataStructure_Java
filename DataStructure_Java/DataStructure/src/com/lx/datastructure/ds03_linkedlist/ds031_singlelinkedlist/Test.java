@@ -17,7 +17,8 @@ public class Test {
         list.show();
 
         System.out.println("===========");
-        list.delete(4);
+//        list.delete(4);
+        list.update(new SNode(4,"GG"));
         list.show();
     }
 }
