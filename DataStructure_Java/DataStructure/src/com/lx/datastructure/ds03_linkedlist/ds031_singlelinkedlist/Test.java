@@ -18,15 +18,19 @@ public class Test {
 
         list.show();
 
-        System.out.println("===========");
+        System.out.println("=====删除节点======");
         //todo 删除节点
-//        list.delete(4);
+        list.delete(6);
+        System.out.println("=====修改节点======");
         //todo 修改节点
         list.update(new SNode(4,"GG"));
         list.show();
-        System.out.println("===========");
+        System.out.println("=====查询节点======");
         // TODO: 2019/8/31 查询节点
         list.check(new SNode(2,""));
+
+        System.out.println("=====单链表中有效节点的个数:"+ list.length() +"个======");
+
 
     }
 }

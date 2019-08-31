@@ -10,6 +10,8 @@ public class SingleLinkedList {
     public SingleLinkedList() {
         head = new SNode();
     }
+    
+    
 
     /**
      * 添加节点
@@ -129,5 +131,29 @@ public class SingleLinkedList {
             temp = temp.getNext();
         }
     }
+
+    /**
+     * TODO: 2019/8/31  单链表面试题(新浪、百度、腾讯)
+     * 1.求单链表中有效节点的个数
+     */
+
+    /**
+     * 求单链表中有效节点的个数
+     */
+    public int length(){
+        SNode temp = head;
+        if (head.getNext() == null){
+            System.out.println("当前链表为空");
+            return 0;
+        }
+        int count = 0;
+        while (temp.getNext() != null){
+            count++;
+            temp = temp.getNext();
+        }
+        return count;
+    }
+
+
 
 }
