@@ -38,6 +38,9 @@ public class Test {
         list.reverse();
         list.show();
 
-
+        System.out.println("=== 反转打印 方式1：反向遍历 =====");
+        list.reversePrint1();
+        System.out.println("=== 反转打印 方式2：Stack栈 =====");
+        list.reversePrint2();
     }
 }

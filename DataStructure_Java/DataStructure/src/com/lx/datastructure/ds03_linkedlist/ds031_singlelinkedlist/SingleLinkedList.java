@@ -1,5 +1,7 @@
 package com.lx.datastructure.ds03_linkedlist.ds031_singlelinkedlist;
 
+import java.util.Stack;
+
 /**
  *  带头节点的单向链表
  */
@@ -137,6 +139,7 @@ public class SingleLinkedList {
      * 1.求单链表中有效节点的个数
      * 2.查找单链表中的倒数第k个结点 【新浪面试题】
      * 3.单链表的反转【腾讯面试题，有点难度】
+     * 4.从尾到头打印单链表 【百度，要求方式1：反向遍历 。 方式2：Stack栈】
      */
 
     /**
@@ -199,6 +202,34 @@ public class SingleLinkedList {
         head.setNext(newHead.getNext());
     }
 
+    /**
+     * 4.1 从尾到头打印单链表 【百度，方式1：反向遍历 】
+     */
+    public void reversePrint1(){
+        reverse();
+        show();
+    }
+
+    /**
+     * 4.2 从尾到头打印单链表 【百度， 方式2：Stack栈】
+     */
+    public void reversePrint2(){
+        Stack<SNode> stack = new Stack<>();
+        if (head.getNext()==null){
+            System.out.println("当前链表为空");
+            return;
+        }
+        SNode temp = head.getNext();
+        while (true){
+//            System.out.println(temp);
+            stack.push(temp);
+            if (temp.getNext() == null) break;//找到最后一个节点了
+            temp = temp.getNext();
+        }
+        while (stack.size()>0){
+            System.out.println(stack.pop());
+        }
+    }
 
 
 }
