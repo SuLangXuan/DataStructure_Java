@@ -9,6 +9,14 @@ public class SingleLinkedList {
 
     private SNode head;
 
+    public SNode getHead() {
+        return head;
+    }
+
+    public void setHead(SNode head) {
+        this.head = head;
+    }
+
     public SingleLinkedList() {
         head = new SNode();
     }
@@ -140,6 +148,7 @@ public class SingleLinkedList {
      * 2.查找单链表中的倒数第k个结点 【新浪面试题】
      * 3.单链表的反转【腾讯面试题，有点难度】
      * 4.从尾到头打印单链表 【百度，要求方式1：反向遍历 。 方式2：Stack栈】
+     * 5.合并两个有序的单链表，合并之后的链表依然有序【腾讯面试题，有点难度】看Test2类
      */
 
     /**
