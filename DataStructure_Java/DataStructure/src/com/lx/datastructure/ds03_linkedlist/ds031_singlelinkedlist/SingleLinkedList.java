@@ -51,6 +51,27 @@ public class SingleLinkedList {
     }
 
     /**
+     * 删除节点
+     */
+    public void delete(int no){
+        SNode temp = head;
+        boolean flag = false;// TODO: 2019/8/31 标识要删除的节点是否存在
+        while (true){
+            if (temp.getNext() == null) break;
+            if (temp.getNext().getNo() == no){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+            temp.setNext(temp.getNext().getNext());
+        }else {
+            System.out.println("no:"+ no +"不存在");
+        }
+    }
+
+    /**
      * 遍历打印链表中的全部节点
      */
     public void show(){

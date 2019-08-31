@@ -15,5 +15,9 @@ public class Test {
         list.addByOrder(new SNode(4,"ff"));
 
         list.show();
+
+        System.out.println("===========");
+        list.delete(4);
+        list.show();
     }
 }
