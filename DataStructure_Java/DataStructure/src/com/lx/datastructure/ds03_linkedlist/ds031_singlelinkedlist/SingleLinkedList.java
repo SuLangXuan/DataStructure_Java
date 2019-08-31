@@ -135,10 +135,11 @@ public class SingleLinkedList {
     /**
      * TODO: 2019/8/31  单链表面试题(新浪、百度、腾讯)
      * 1.求单链表中有效节点的个数
+     * 2.查找单链表中的倒数第k个结点 【新浪面试题】
      */
 
     /**
-     * 求单链表中有效节点的个数
+     * 1.求单链表中有效节点的个数
      */
     public int length(){
         SNode temp = head;
@@ -152,6 +153,26 @@ public class SingleLinkedList {
             temp = temp.getNext();
         }
         return count;
+    }
+
+    /**
+     * 2.查找单链表中的倒数第k个结点 【新浪面试题】
+     */
+    public void find(int num){
+        if (head.getNext()== null) {
+            System.out.println("当前节点为空");
+            return;
+        }
+        int length = length();
+        SNode temp = head.getNext();
+        if (num>length){
+            System.out.println("有效节点的个数为"+length+"个，不能查找倒数的第"+num+"个节点");
+            return;
+        }
+        for (int i = 0;i <length-num;i++){
+            temp = temp.getNext();
+        }
+        System.out.println(temp);
     }
 
 

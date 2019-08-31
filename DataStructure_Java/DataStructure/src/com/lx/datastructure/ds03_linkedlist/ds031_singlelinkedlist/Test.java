@@ -31,6 +31,10 @@ public class Test {
 
         System.out.println("=====单链表中有效节点的个数:"+ list.length() +"个======");
 
+        System.out.println("==========查找单链表中的倒数第k个结点 【新浪面试题】===============");
+        list.find(3);
+
+       
 
     }
 }
