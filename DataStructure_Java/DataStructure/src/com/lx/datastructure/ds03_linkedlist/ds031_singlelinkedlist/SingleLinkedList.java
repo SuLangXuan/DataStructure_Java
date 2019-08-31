@@ -24,6 +24,32 @@ public class SingleLinkedList {
         temp.setNext(node);
     }
 
+
+    /**
+     * 根据节点的编号有序的添加节点
+     */
+    public void addByOrder(SNode node){
+        SNode temp = head;
+        boolean flag = false;// TODO: 2019/8/31 标识当前节点在链表中是否已经存在
+        while (true){
+            // TODO: 2019/8/31 找到节点合适的位置，添加节点
+            if (temp.getNext() == null) break;// TODO: 2019/8/31 已经是链表的最后了，说明当前节点的编号比链表中的全部节点都大
+            if (node.getNo()<temp.getNext().getNo()) break;// TODO: 2019/8/31 下一个节点的编号比要添加的节点编号大，该节点需要加在下一个节点前
+            if (node.getNo() == temp.getNext().getNo()){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+            System.out.println("当前节点已经存在，不能重复添加");
+        }else {
+            node.setNext(temp.getNext());
+            temp.setNext(node);
+        }
+
+    }
+
     /**
      * 遍历打印链表中的全部节点
      */
