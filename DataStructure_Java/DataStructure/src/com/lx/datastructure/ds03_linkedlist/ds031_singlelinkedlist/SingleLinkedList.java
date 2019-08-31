@@ -136,6 +136,7 @@ public class SingleLinkedList {
      * TODO: 2019/8/31  单链表面试题(新浪、百度、腾讯)
      * 1.求单链表中有效节点的个数
      * 2.查找单链表中的倒数第k个结点 【新浪面试题】
+     * 3.单链表的反转【腾讯面试题，有点难度】
      */
 
     /**
@@ -173,6 +174,29 @@ public class SingleLinkedList {
             temp = temp.getNext();
         }
         System.out.println(temp);
+    }
+
+    /**
+     * 3.单链表的反转【腾讯面试题，有点难度】
+     */
+    public void reverse() {
+        // TODO: 2019/8/31 链表中少于等于1个，不用反转
+        if (length() <= 1) {
+            System.out.println("链表中少于等于1个，不用反转 ");
+            return;
+        }
+        //创建一个新链表
+        SNode newHead = new SNode();
+        SNode cur = head.getNext();
+        SNode next;// TODO: 2019/8/31 记录当前节点的next值
+        while (cur != null) {
+            // TODO: 2019/8/31 把每一个节点添加到新节点的第一位
+            next = cur.getNext();
+            cur.setNext(newHead.getNext());
+            newHead.setNext(cur);
+            cur = next;
+        }
+        head.setNext(newHead.getNext());
     }
 
 

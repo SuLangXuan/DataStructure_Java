@@ -34,7 +34,10 @@ public class Test {
         System.out.println("==========查找单链表中的倒数第k个结点 【新浪面试题】===============");
         list.find(3);
 
-       
+        System.out.println("=== 反转链表 ====");
+        list.reverse();
+        list.show();
+
 
     }
 }
