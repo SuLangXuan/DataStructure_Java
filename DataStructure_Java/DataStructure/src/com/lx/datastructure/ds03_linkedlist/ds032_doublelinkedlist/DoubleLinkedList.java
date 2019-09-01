@@ -53,6 +53,34 @@ public class DoubleLinkedList {
         }
     }
 
+
+
+    /**
+     * 修改双向链表的节点
+     */
+    public void update(DNode node){
+        if (head.getNext() == null) return;
+        DNode temp = head.getNext();
+        boolean flag = false;
+        while (true){
+            if (temp == null) break; // TODO: 2019/9/1 找到最后，没找着
+            if (temp.getNo() == node.getNo()){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+            temp.getPre().setNext(node);
+            if (temp.getNext()!=null){// TODO: 2019/9/1 最后一个节点的情况 
+                node.setNext(temp.getNext());
+            }
+        }else {
+            System.out.println("链表中不存在对应的节点");
+        }
+    }
+
+
     /**
      * 顺序遍历打印链表中的全部节点
      */
@@ -63,9 +91,11 @@ public class DoubleLinkedList {
         }
         DNode temp = head.getNext();
         while (true){
+            if (temp == null) break;//找到最后一个节点了
             System.out.println(temp);
-            if (temp.getNext() == null) break;//找到最后一个节点了
             temp = temp.getNext();
         }
     }
+
+
 }

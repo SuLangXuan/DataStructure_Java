@@ -13,5 +13,12 @@ public class Test {
         list.addByOrder(new DNode(10,"kk"));
         list.addByOrder(new DNode(6,"kk"));
         list.show();
+
+
+
+        System.out.println("========修改节点======");
+        list.update(new DNode(4,"xuan"));
+        list.show();
+
     }
 }
