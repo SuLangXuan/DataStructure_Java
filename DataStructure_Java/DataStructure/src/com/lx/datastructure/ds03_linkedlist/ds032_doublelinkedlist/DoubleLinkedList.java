@@ -9,6 +9,14 @@ public class DoubleLinkedList {
 
     private DNode head;
 
+    public DNode getHead() {
+        return head;
+    }
+
+    public void setHead(DNode head) {
+        this.head = head;
+    }
+
     public DoubleLinkedList() {
         head = new DNode();
     }
@@ -32,6 +40,12 @@ public class DoubleLinkedList {
      * 找到合适的节点，然后设置前后next pre
      */
     public void addByOrder(DNode node){
+        // TODO: 2019/9/1 先处理链表为空的情况 
+        if (head.getNext()==null){
+            node.setPre(head);
+            head.setNext(node);
+            return;
+        }
         DNode temp = head;
         boolean flag = false;// TODO: 2019/9/1 标识当前节点在链表中是否已经存在
         while (true){
@@ -44,14 +58,20 @@ public class DoubleLinkedList {
             }
             temp = temp.getNext();
         }
+
         if (flag){
             System.out.println("当前节点已经存在"+node);
         }else {
-                node.setNext(temp.getNext());
-                temp.setNext(node);
-                node.setPre(temp);
+            if (temp.getNext()!=null){// TODO: 2019/9/1 最后一个节点不用设置  
+                temp.getNext().setPre(node);
+            }
+            node.setNext(temp.getNext());
+            temp.setNext(node);
+            node.setPre(temp);
+
         }
     }
+
 
 
     /**
