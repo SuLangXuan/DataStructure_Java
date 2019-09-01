@@ -59,7 +59,6 @@ public class SingleLinkedList {
             node.setNext(temp.getNext());
             temp.setNext(node);
         }
-
     }
 
     /**
