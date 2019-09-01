@@ -54,6 +54,36 @@ public class DoubleLinkedList {
     }
 
 
+    /**
+     * 删除双向链表中的节点
+     */
+    public void delete(int num){
+        if (head.getNext() == null) return;
+        DNode temp = head.getNext();
+        boolean flag = false; // TODO: 2019/9/1 标识在链表中是否找到对应要删除的节点
+        while (true){
+            if (temp==null) break;
+            if (temp.getNo() == num){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if (flag){
+
+            if (temp.getNext()!=null){
+                temp.getPre().setNext(temp.getNext());
+                temp.getNext().setPre(temp.getPre());
+            }else {// TODO: 2019/9/1 如果是最后一个节点，不需要设置下一个节点的pre,当前节点直接删除
+                temp.getPre().setNext(null);
+            }
+        }else {
+            System.out.println("num:"+num+"在链表中不存在");
+        }
+    }
+
+
+
 
     /**
      * 修改双向链表的节点
