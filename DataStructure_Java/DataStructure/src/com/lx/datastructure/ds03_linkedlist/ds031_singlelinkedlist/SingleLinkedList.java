@@ -148,6 +148,7 @@ public class SingleLinkedList {
      * 3.单链表的反转【腾讯面试题，有点难度】
      * 4.从尾到头打印单链表 【百度，要求方式1：反向遍历 。 方式2：Stack栈】
      * 5.合并两个有序的单链表，合并之后的链表依然有序【腾讯面试题，有点难度】看Test2类
+     * 6.判断单链表中是否存在环【网络搜索链表面试题，很多】
      */
 
     /**
@@ -238,6 +239,9 @@ public class SingleLinkedList {
             System.out.println(stack.pop());
         }
     }
+
+
+
 
 
 }
