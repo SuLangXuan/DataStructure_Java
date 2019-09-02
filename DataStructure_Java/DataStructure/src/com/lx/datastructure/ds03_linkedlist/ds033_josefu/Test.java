@@ -7,6 +7,8 @@ public class Test {
         // TODO: 2019/9/2 构建一个单向环形链表
         SingleCircleLinkedList list = new SingleCircleLinkedList();
         list.createSingleCircleLinkedList(10);
-        list.show();
+//        list.show();
+        list.josephu(5,3,10);
+
     }
 }
