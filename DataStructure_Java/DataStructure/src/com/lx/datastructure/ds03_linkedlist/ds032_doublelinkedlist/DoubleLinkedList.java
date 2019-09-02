@@ -40,7 +40,7 @@ public class DoubleLinkedList {
      * 找到合适的节点，然后设置前后next pre
      */
     public void addByOrder(DNode node){
-        // TODO: 2019/9/1 先处理链表为空的情况 
+        // TODO: 2019/9/1 先处理链表为空的情况
         if (head.getNext()==null){
             node.setPre(head);
             head.setNext(node);
