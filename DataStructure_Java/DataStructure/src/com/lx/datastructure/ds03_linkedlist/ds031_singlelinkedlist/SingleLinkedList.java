@@ -189,6 +189,28 @@ public class SingleLinkedList {
     }
 
     /**
+     * 2.查找单链表中的倒数第k个结点 【新浪面试题】
+     */
+    public SNode find2(int num){
+        if (head.getNext()== null) {
+            System.out.println("当前节点为空");
+            return null;
+        }
+        int length = length();
+        SNode temp = head.getNext();
+        if (num>length){
+            System.out.println("有效节点的个数为"+length+"个，不能查找倒数的第"+num+"个节点");
+            return null;
+        }
+        for (int i = 0;i <length-num;i++){
+            temp = temp.getNext();
+        }
+        System.out.println(temp);
+        delete(temp.getNo());
+        return temp;
+    }
+
+    /**
      * 3.单链表的反转【腾讯面试题，有点难度】
      */
     public void reverse() {
