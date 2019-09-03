@@ -14,7 +14,7 @@ public class Calculator {
     public static void main(String[] args) {
 
         // TODO: 2019/9/3
-        cal("2+3*2-4*8");
+        cal("10+5*20-8");
     }
 
     public static int cal(String expression){
@@ -27,6 +27,7 @@ public class Calculator {
         int index = 0;
         char c = ' ';
         int num1,num2,oper;
+        String keepNum = "" ; //记录多位数的情况
         while (true){
             //表达式中的每一个字符
             c = expression.substring(index,index+1).charAt(0);
@@ -56,9 +57,23 @@ public class Calculator {
                 }
             }else {
                 //是数字，加入数栈，因为c 是对应的字符‘1’ 要按asic码表转换，就是相差48 ，所以减48
-                stackNum.push(c-48);
+//                stackNum.push(c-48);  //单位数的做法
+                // TODO: 2019/9/3 处理多位数的情况
+
+                keepNum +=c;
+
+                // TODO: 2019/9/3 如果当前是最后一位了，就直接入栈
+                if (index == expression.length()-1){
+                    stackNum.push(Integer.parseInt(keepNum));
+                }else {// TODO: 2019/9/3 不是最后一位，继续取下一位
+                    // TODO: 2019/9/3 截取下一位，判断下一位如果是运算符，才入栈
+                    if (stackNum.isOperator(expression.substring(index+1,index+2).charAt(0))){
+                        stackNum.push(Integer.parseInt(keepNum));
+                        // TODO: 2019/9/3 清空记录 多位数的变量
+                        keepNum = "";
+                    }
+                }
             }
-            
             index++;
             if (index >= expression.length()) break;
         }
