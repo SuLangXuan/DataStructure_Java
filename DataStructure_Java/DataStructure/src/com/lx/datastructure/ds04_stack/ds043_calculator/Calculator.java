@@ -1,5 +1,7 @@
 package com.lx.datastructure.ds04_stack.ds043_calculator;
 
+import java.util.Stack;
+
 /**
  * 使用栈完成表达式的计算 思路
  * 1. 通过一个 index  值（索引），来遍历我们的表达式
@@ -14,7 +16,7 @@ public class Calculator {
     public static void main(String[] args) {
 
         // TODO: 2019/9/3
-        cal("10+5*20-8");
+        cal("10+5*20-18");
     }
 
     public static int cal(String expression){
@@ -28,6 +30,7 @@ public class Calculator {
         char c = ' ';
         int num1,num2,oper;
         String keepNum = "" ; //记录多位数的情况
+        String keepKuoHao = ""; //记录括号中的表达式
         while (true){
             //表达式中的每一个字符
             c = expression.substring(index,index+1).charAt(0);
@@ -38,6 +41,15 @@ public class Calculator {
 //            stackOper.show();
             // TODO: 2019/9/3 判断字符 
             if (stackNum.isOperator(c)){
+
+//                // TODO: 2019/9/3 如果是括号，先把括号的表达式记录下来，再调本方法计算
+//                if (stackNum.isKuoHao(c)){
+//                    keepKuoHao += c;
+//                    // TODO: 2019/9/3 直到遇到） 一对为止
+//
+//                }
+
+                
                 //是字符
                 if (stackOper.isEmpty()){
                     // TODO: 2019/9/3 如果符号栈为空，直接入栈，

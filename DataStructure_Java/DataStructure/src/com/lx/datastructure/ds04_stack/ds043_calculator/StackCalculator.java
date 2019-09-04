@@ -58,11 +58,16 @@ public class StackCalculator {
 
     // TODO: 2019/9/3 判断是否是运算符
     public boolean isOperator(int ch){
-        return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '(' || ch == ')';
     }
 
     public boolean isOperator2(CharSequence ch){
         return "+-*/".contains(ch);
+    }
+
+    // TODO: 2019/9/3 判断是否是括号
+    public boolean isKuoHao(int ch){
+        return ch == '(' || ch == ')';
     }
 
     // TODO: 2019/9/3 返回运算符的优先级,数字越大，则优先级就越高.
